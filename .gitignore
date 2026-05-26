@@ -25,3 +25,6 @@ Desktop.ini
 docs/
 dump.md 
 .codex
+.codexignore
+.qwen
+.qwenignore

@@ -6,3 +6,5 @@
 logs
 node_modules
 package-lock.json
+.qwenignore
+.qwen

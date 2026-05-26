@@ -382,7 +382,20 @@ function Read-Attachments {
 
 Clear-Host
 Write-Host "WhatsApp Scheduled Messenger" -ForegroundColor Cyan
-Write-Host "This builds queue.json and creates the Windows scheduled task."
+Write-Host "Build a WhatsApp message queue, schedule it with Windows Task Scheduler,"
+Write-Host "and send later through your saved WhatsApp Web session."
+Write-Host ""
+Write-Host "Important:" -ForegroundColor DarkGray
+Write-Host "  The computer must be on, awake, logged in, and connected to the internet at send time." -ForegroundColor DarkGray
+Write-Host ""
+Write-Host "Overnight desktop/laptop setup:" -ForegroundColor DarkGray
+Write-Host "  Leave the computer powered on." -ForegroundColor DarkGray
+Write-Host "  Stay signed in to Windows." -ForegroundColor DarkGray
+Write-Host "  Set sleep and hibernate to Never." -ForegroundColor DarkGray
+Write-Host "  Desktop: you can turn the monitor off." -ForegroundColor DarkGray
+Write-Host "  Laptop: plug it in, set lid close to Do nothing, or leave the lid open." -ForegroundColor DarkGray
+Write-Host "  Laptop: you can turn the screen off." -ForegroundColor DarkGray
+Write-Host "  Use the shutdown option here if you want the computer to power off after sending." -ForegroundColor DarkGray
 
 Write-Section "Recipients"
 $RecipientCount = Read-RecipientCount

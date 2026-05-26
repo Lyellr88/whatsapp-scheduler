@@ -1,0 +1,55 @@
+{
+  "name": "whatsapp-scheduler",
+  "version": "1.0.0",
+  "description": "Send scheduled WhatsApp messages via whatsapp-web.js",
+  "main": "send_whatsapp.js",
+  "os": [
+    "win32"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "whatsapp-sched": "./whatsapp-sched.js"
+  },
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "lib",
+    "queue.json",
+    "run_queue.ps1",
+    "schedule_send.ps1",
+    "send_whatsapp.js",
+    "setup_send.ps1",
+    "whatsapp-sched.js"
+  ],
+  "keywords": [
+    "whatsapp",
+    "scheduler",
+    "windows",
+    "task-scheduler",
+    "whatsapp-web"
+  ],
+  "scripts": {
+    "auth": "node send_whatsapp.js --auth-only",
+    "send": "node send_whatsapp.js",
+    "schedule": "node whatsapp-sched.js",
+    "dry-run": "node whatsapp-sched.js --dry-run",
+    "test:whatsapp:dry-run": "node send_whatsapp.js --dry-run --from-queue",
+    "lint": "npm run lint:js && npm run lint:ps",
+    "lint:js": "eslint .",
+    "lint:ps": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\\scripts\\validate-powershell.ps1",
+    "validate": "npm run lint && npm test",
+    "test": "npm run test:node && npm run test:ps",
+    "test:node": "node --test tests\\phone.test.js tests\\matching.test.js tests\\cli.test.js tests\\status.test.js tests\\dry-run.test.js",
+    "test:ps": "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"Import-Module Pester -MinimumVersion 5.0; Invoke-Pester -Path .\\tests\\runner-lock.test.ps1, .\\tests\\scheduling.test.ps1, .\\tests\\integration.test.ps1 -Output Detailed\""
+  },
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.23.0"
+  },
+  "devDependencies": {
+    "eslint": "^10.4.0"
+  }
+}

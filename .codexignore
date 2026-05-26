@@ -1,0 +1,8 @@
+# Codex ignore files
+
+.npm-cache
+.wwebjs_cache
+.wwebjs_auth
+logs
+node_modules
+package-lock.json

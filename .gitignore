@@ -1,0 +1,27 @@
+# Runtime auth/session state
+.wwebjs_auth/
+.wwebjs_auth*
+.wwebjs_cache/
+.wwebjs_cache*
+
+# Generated queues and logs
+queue.json
+queues/
+logs/
+
+# Local package/tooling cache
+node_modules/
+.npm-cache/
+
+# Packaged tarballs
+*.tgz
+
+# OS / editor noise
+Thumbs.db
+Desktop.ini
+
+# User-specific files
+
+docs/
+dump.md 
+.codex
